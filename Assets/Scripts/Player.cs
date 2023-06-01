@@ -60,10 +60,7 @@ public class Player : MonoBehaviour
         _position = Vector3.forward + new Vector3(position.x * _rotationSpeed, 0, 0);
         //Debug.Log("Normalize pos: " + _position);
     }
-    public void Jump()
-    {
-
-    }
+   
     private void Hit(float value)
     {
         if (value >= 0)
@@ -71,7 +68,8 @@ public class Player : MonoBehaviour
         else
             _meshRenderer.sharedMaterial.SetColor("_BaseColor", _colorBad);
         Invoke("ReturnColor", _returnColorTime);
-    }
+    } 
+
     public void Lost()
     {
         _particle.Stop();
